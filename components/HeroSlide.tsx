@@ -122,7 +122,7 @@ const HeroSlide: React.FC<HeroSlideProps> = ({ data }) => {
         </div>
       </div>
 
-      <div className="absolute inset-0 flex lg:items-center items-end z-20 p-4">
+      <div className="absolute inset-0 flex md:items-center items-end justify-center md:justify-start z-20 p-4">
         <div className="flex flex-row md:flex-col gap-4 md:gap-[4vh]">
           {data.map((_, index) => (
             <button

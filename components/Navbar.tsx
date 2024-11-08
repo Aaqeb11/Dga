@@ -88,20 +88,20 @@ const NavBar: React.FC = () => {
           : 'bg-[#4d4d4d]'
       }`}
     >
-      <div className="px-2 h-full flex items-center">
-        {/* Mobile Menu Button - Now on the left */}
-        <div className="lg:hidden order-first">
+      <div className="px-2 md:px-4 lg:px-6 h-full flex items-center justify-between lg:justify-start">
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
           <button
             onClick={() => toggleMenu()}
-            className={`text-2xl ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+            className={`text-2xl p-2 ${isScrolled ? 'text-gray-800' : 'text-white'}`}
             aria-label="Toggle menu"
           >
             <GiHamburgerMenu />
           </button>
         </div>
 
-        {/* Logo - Centered on mobile */}
-        <div className={`flex-1 lg:flex-none lg:w-[190px] lg:border-r-[0.5px] ${
+        {/* Logo */}
+        <div className={`flex-none lg:w-[190px] lg:border-r-[0.5px] ${
           isScrolled ? 'lg:border-gray-200' : 'lg:border-white'
         } h-full items-center justify-center flex`}>
           <Link href="/" passHref>
@@ -120,11 +120,11 @@ const NavBar: React.FC = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex flex-grow justify-center">
-          <div className="flex items-center space-x-10">
+          <div className="flex items-center gap-[2vw] xl:gap-[4vw]">
             {items.map((item, index) => (
               <button
                 key={index}
-                className={`text-[16px] font-medium nav-font transition-colors tracking-wider ${
+                className={`text-[14px] xl:text-[16px] font-medium nav-font transition-colors tracking-wider ${
                   isScrolled
                     ? index === 0 
                       ? 'text-[#FF8B00]' 
@@ -141,12 +141,12 @@ const NavBar: React.FC = () => {
           </div>
         </div>
 
-        {/* Book Call Button */}
+        {/* Book Call Button - Desktop Only */}
         <div className={`hidden lg:flex lg:w-[190px] lg:border-l-[0.5px] ${
           isScrolled ? 'lg:border-gray-200' : 'lg:border-white'
         } h-full items-center justify-center`}>
           <button
-            className={`border px-6 py-2 rounded-md text-md font-medium transition duration-300 ${
+            className={`border px-4 xl:px-6 py-2 rounded-md text-sm xl:text-md font-medium transition duration-300 whitespace-nowrap ${
               isScrolled
                 ? 'bg-[#FF8B00] text-white border-gray-300 hover:bg-white hover:text-[#FF8B00] hover:border-[#FF8B00]'
                 : 'bg-[#FF8B00] text-white border-gray-300 hover:bg-white hover:text-[#FF8B00] hover:border-[#FF8B00]'
@@ -157,8 +157,8 @@ const NavBar: React.FC = () => {
           </button>
         </div>
 
-        {/* Empty div for mobile to maintain centering */}
-        <div className="lg:hidden w-8"></div>
+        {/* Empty div for mobile layout balance */}
+        <div className="w-10 lg:hidden"></div>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -169,50 +169,50 @@ const NavBar: React.FC = () => {
         ></div>
       )}
 
-    {/* Mobile Menu Sidebar */}
-<div
-  className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
-    isMenuOpen ? "translate-x-0" : "-translate-x-full"
-  } lg:hidden`}
->
-  <div className="flex flex-col h-full justify-between">
-    <div className="flex justify-end p-4">
-      <button
-        onClick={() => toggleMenu()}
-        className="text-2xl"
-        aria-label="Close menu"
+      {/* Mobile Menu Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        } lg:hidden`}
       >
-        <IoMdClose className="text-[#FF8B00] text-4xl" />
-      </button>
-    </div>
-    <div className="flex flex-col gap-14 p-4 overflow-scroll overflow-x-hidden">
-      {items.map((item, index) => (
-        <div className="relative" key={index}>
-          <div
-            className="bg-[#FF8B00] absolute top-0 left-0 w-full h-full z-10 rounded-xl"
-            ref={(el) => {
-              menuItemsRef.current[index] = el;
-            }}
-          ></div>
-          <button
-            className="text-left border-gray-400 text-xl text-black border px-4 rounded-xl shadow-lg py-1 font-bold bg-white w-full"
-            onClick={() => toggleMenu(item.id.toLowerCase())}
-          >
-            {item.item}
-          </button>
+        <div className="flex flex-col h-full justify-between">
+          <div className="flex justify-end p-4">
+            <button
+              onClick={() => toggleMenu()}
+              className="text-2xl"
+              aria-label="Close menu"
+            >
+              <IoMdClose className="text-[#FF8B00] text-4xl" />
+            </button>
+          </div>
+          <div className="flex flex-col gap-14 p-4 overflow-scroll overflow-x-hidden">
+            {items.map((item, index) => (
+              <div className="relative" key={index}>
+                <div
+                  className="bg-[#FF8B00] absolute top-0 left-0 w-full h-full z-10 rounded-xl"
+                  ref={(el) => {
+                    menuItemsRef.current[index] = el;
+                  }}
+                ></div>
+                <button
+                  className="text-left border-gray-400 text-xl text-black border px-4 rounded-xl shadow-lg py-1 font-bold bg-white w-full"
+                  onClick={() => toggleMenu(item.id.toLowerCase())}
+                >
+                  {item.item}
+                </button>
+              </div>
+            ))}
+          </div>
+          <div className="p-4">
+            <button
+              className="w-full bg-[#FF8B00] border border-gray-300 py-3 rounded-xl text-lg font-medium text-white font-bold hover:border-[#FF8B00] hover:bg-white hover:text-[#FF8B00] transition duration-300"
+              onClick={() => toggleMenu("contact")}
+            >
+              Contact
+            </button>
+          </div>
         </div>
-      ))}
-    </div>
-    <div className="p-4">
-      <button
-        className="w-full bg-[#FF8B00] border border-gray-300 py-3 rounded-xl text-lg font-medium text-white font-bold hover:border-[#FF8B00] hover:bg-white hover:text-[#FF8B00] transition duration-300"
-        onClick={() => toggleMenu("contact")}
-      >
-        Contact
-      </button>
-    </div>
-  </div>
-</div>
+      </div>
     </nav>
   );
 };
