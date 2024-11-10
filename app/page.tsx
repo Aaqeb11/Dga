@@ -3,6 +3,7 @@ import { data } from "@/data/IntroSection";
 import HeroSlide from "@/components/HeroSlide";
 import About from "@/components/About";
 import Expandable from "@/components/Expandable";
+import WhyUsSection from "@/components/WhyUsSection";
 
 export default function Home() {
   return (
@@ -37,6 +38,20 @@ export default function Home() {
        <Expandable/>
       </div>
     </section>
+    <section className="min-h-screen relative mt-[13vh] mb-10">
+        <div className=" z-0 flex items-center justify-center z-0 relative">
+          <span className="text-6xl lg:text-[180px] lg:w-[224px] w-16 text-gray-100 flex justify-center font-bold">W</span>
+          <span className="text-6xl lg:text-[180px] lg:w-[224px] w-16 text-gray-100 flex justify-center font-bold">H</span>
+          <span className="text-6xl lg:text-[180px] lg:w-[224px] w-16 text-gray-100 flex justify-center font-bold">Y</span>
+          <span className="text-6xl lg:text-[180px] lg:w-[224px] w-16 text-gray-100 flex justify-center font-bold">U</span>
+          <span className="text-6xl lg:text-[180px] lg:w-[224px] w-16 text-gray-100 flex justify-center font-bold">S</span>
+
+        </div>
+        <div className="flex items-center justify-between lg:w-[80%] mx-auto z-10 md:-mt-[90px] -mt-20 md:flex-row flex-col gap-6 h-full">
+          <WhyUsSection/>
+        </div>
+
+      </section>
     </main>
   );
 }

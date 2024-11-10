@@ -2,3 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Wiggle animation for notebook icon */
+@keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-2deg);
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+  }
+  
+  .animate-wiggle {
+    animation: wiggle 2s ease-in-out infinite;
+  }
+  
