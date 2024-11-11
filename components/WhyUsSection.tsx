@@ -2,8 +2,8 @@ import React from "react";
 
 const WhyUsSection: React.FC = () => {
   return (
-    <section className="py-16 bg-white text-center">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-16 text-center relative">
+      <div className="mx-auto px-6">
         <h2 className="text-4xl font-bold mb-4">
           Why <span className="text-gold">Us</span>
         </h2>
@@ -11,10 +11,10 @@ const WhyUsSection: React.FC = () => {
           We focus not only on aesthetics but functionality is given the highest priority. We believe in
           timeless and effortless feeling in the final outcome. We believe in सहज.
         </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Card 1 with Animated Notebook Icon */}
-          <div className="bg-[#F7F7F7] p-8 rounded-lg shadow-lg">
+          <div className="bg-[#F7F7F7] p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 duration-300">
             <div className="mb-4 text-gold">
               <svg
                 className="w-12 h-12 mx-auto animate-wiggle"
@@ -22,13 +22,10 @@ const WhyUsSection: React.FC = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                {/* Notebook Cover */}
                 <rect x="3" y="2" width="14" height="20" rx="2" fill="currentColor" />
-                {/* Notebook Spiral Rings */}
                 <line x1="5" y1="3" x2="5" y2="21" stroke="white" strokeWidth="1.5" />
                 <line x1="7" y1="3" x2="7" y2="21" stroke="white" strokeWidth="1.5" />
                 <line x1="9" y1="3" x2="9" y2="21" stroke="white" strokeWidth="1.5" />
-                {/* Notebook Pages */}
                 <rect x="10" y="3" width="10" height="18" rx="2" fill="white" />
                 <line x1="13" y1="6" x2="18" y2="6" stroke="gray" strokeWidth="1" />
                 <line x1="13" y1="10" x2="18" y2="10" stroke="gray" strokeWidth="1" />
@@ -43,8 +40,8 @@ const WhyUsSection: React.FC = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-[#F7F7F7] p-8 rounded-lg shadow-lg">
-            <div className="mb-4 text-gold animate-bounce">
+          <div className="bg-[#F7F7F7] p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 duration-300">
+            <div className="mb-4 text-gold">
               <svg className="w-12 h-12 mx-auto" viewBox="0 0 24 24" fill="none">
                 <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" strokeWidth="2" />
                 <circle cx="12" cy="12" r="3" fill="currentColor" />
@@ -58,7 +55,7 @@ const WhyUsSection: React.FC = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-[#F7F7F7] p-8 rounded-lg shadow-lg">
+          <div className="bg-[#F7F7F7] p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 duration-300">
             <div className="mb-4 text-gold animate-pulse">
               <svg className="w-12 h-12 mx-auto" viewBox="0 0 24 24" fill="none">
                 <path
