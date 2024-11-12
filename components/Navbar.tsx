@@ -105,8 +105,8 @@ const NavBar: React.FC = () => {
               <Image
                 src={logo}
                 alt="logo"
-                width={115}
-                height={115}
+                width={50}
+                height={50}
                 className="object-cover hover:cursor-pointer"
                 priority
               />
@@ -123,11 +123,11 @@ const NavBar: React.FC = () => {
                 className={`text-[14px] xl:text-[16px] font-medium nav-font transition-colors tracking-wider ${
                   isScrolled
                     ? index === 0 
-                      ? 'text-[#FF8B00]' 
-                      : 'text-gray-800 hover:text-[#FF8B00]'
+                      ? 'text-[#69bf06]' 
+                      : 'text-gray-800 hover:text-[#69bf06]'
                     : index === 0 
-                      ? 'text-[#f2d98c]' 
-                      : 'text-white hover:text-[#f2d98c]'
+                      ? 'text-[#69bf06]' 
+                      : 'text-white hover:text-[#69bf06]'
                 }`}
                 onClick={() => scrollToSection(item.id.toLowerCase())}
               >
@@ -144,8 +144,8 @@ const NavBar: React.FC = () => {
           <button
             className={`border px-4 xl:px-6 py-2 rounded-md text-sm xl:text-md font-medium transition duration-300 whitespace-nowrap ${
               isScrolled
-                ? 'bg-[#FF8B00] text-white border-gray-300 hover:bg-white hover:text-[#FF8B00] hover:border-[#FF8B00]'
-                : 'bg-[#FF8B00] text-white border-gray-300 hover:bg-white hover:text-[#FF8B00] hover:border-[#FF8B00]'
+                ? 'bg-[#69bf06] text-white border-gray-300 hover:bg-white hover:text-[#69bf06] hover:border-[#69bf06]'
+                : 'bg-[#69bf06] text-white border-gray-300 hover:bg-white hover:text-[#69bf06] hover:border-[#69bf06]'
             }`}
             onClick={() => scrollToSection("contact")}
           >
@@ -178,14 +178,14 @@ const NavBar: React.FC = () => {
               className="text-2xl"
               aria-label="Close menu"
             >
-              <IoMdClose className="text-[#FF8B00] text-4xl" />
+              <IoMdClose className="text-[#69bf06] text-4xl" />
             </button>
           </div>
           <div className="flex flex-col gap-14 p-4 overflow-scroll overflow-x-hidden">
             {items.map((item, index) => (
               <div className="relative" key={index}>
                 <div
-                  className="bg-[#FF8B00] absolute top-0 left-0 w-full h-full z-10 rounded-xl"
+                  className="bg-[#69bf06] absolute top-0 left-0 w-full h-full z-10 rounded-xl"
                   ref={(el) => {
                     menuItemsRef.current[index] = el;
                   }}
@@ -201,7 +201,7 @@ const NavBar: React.FC = () => {
           </div>
           <div className="p-4">
             <button
-              className="w-full bg-[#FF8B00] border border-gray-300 py-3 rounded-xl text-lg font-medium text-white font-bold hover:border-[#FF8B00] hover:bg-white hover:text-[#FF8B00] transition duration-300"
+              className="w-full bg-[#69bf06] border border-gray-300 py-3 rounded-xl text-lg font-medium text-white font-bold hover:border-[#69bf06] hover:bg-white hover:text-[#69bf06] transition duration-300"
               onClick={() => toggleMenu("contact")}
             >
               Contact

@@ -23,7 +23,7 @@ export default function Home() {
 
       {/* Positioning the line with negative margin to overlay */}
       <div className=" items-center justify-center w-full px-10 absolute -mt-14 hidden md:flex">
-        <div className="h-[19vh] xl:h-[14vh] w-[1px] bg-[#f2d98c]"></div>
+        <div className="h-[19vh] xl:h-[14vh] w-[1px] bg-[#69bf06]"></div>
       </div>
       <section className="min-h-screen md:min-h-[50vh] lg:min-h-[100vh] 2xl:min-h-[80vh] relative mt-[13vh] mb-8 ">
       <div className="z-0 flex items-center justify-center relative">
@@ -37,7 +37,7 @@ export default function Home() {
 
       </section>
       <div className=" items-center justify-center w-full px-10 absolute -mt-[90px] hidden md:flex z-10" >
-        <div className="h-[19vh] xl:h-[14vh] w-[1px] bg-[#f2d98c]"></div>
+        <div className="h-[19vh] xl:h-[14vh] w-[1px] bg-[#69bf06]"></div>
       </div>
       <section className="min-h-screen relative mt-[40vh] md:mt-0">
       <div className="flex lg:flex-row h-screen flex-col ">

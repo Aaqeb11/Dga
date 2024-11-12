@@ -5,7 +5,7 @@ const WhyUsSection: React.FC = () => {
     <section className="py-16 text-center relative">
       <div className="mx-auto px-6">
         <h2 className="text-4xl font-bold mb-4">
-          Why <span className="text-gold">Us</span>
+          Why <span className="text-green">Us</span>
         </h2>
         <p className="text-lg text-gray-600 mb-12">
           We focus not only on aesthetics but functionality is given the highest priority. We believe in
@@ -15,7 +15,7 @@ const WhyUsSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Card 1 with Animated Notebook Icon */}
           <div className="bg-[#F7F7F7] p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 duration-300">
-            <div className="mb-4 text-gold">
+            <div className="mb-4 text-green">
               <svg
                 className="w-12 h-12 mx-auto animate-wiggle"
                 viewBox="0 0 24 24"
@@ -41,7 +41,7 @@ const WhyUsSection: React.FC = () => {
 
           {/* Card 2 */}
           <div className="bg-[#F7F7F7] p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 duration-300">
-            <div className="mb-4 text-gold">
+            <div className="mb-4 text-green">
               <svg className="w-12 h-12 mx-auto" viewBox="0 0 24 24" fill="none">
                 <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" strokeWidth="2" />
                 <circle cx="12" cy="12" r="3" fill="currentColor" />
@@ -56,7 +56,7 @@ const WhyUsSection: React.FC = () => {
 
           {/* Card 3 */}
           <div className="bg-[#F7F7F7] p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 duration-300">
-            <div className="mb-4 text-gold animate-pulse">
+            <div className="mb-4 text-green animate-pulse">
               <svg className="w-12 h-12 mx-auto" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M12 2L15 8h7l-5.5 4L18 20l-6-4.5L6 20l1.5-8L2 8h7L12 2z"

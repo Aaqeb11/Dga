@@ -115,7 +115,7 @@ const HeroSlide: React.FC<HeroSlideProps> = ({ data }) => {
         <div className="flex items-center justify-center z-10 w-[70vw]">
           <h1
             ref={textRef}
-            className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center"
+            className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-center"
           >
             {data[activeIndex].text}
           </h1>
@@ -131,7 +131,7 @@ const HeroSlide: React.FC<HeroSlideProps> = ({ data }) => {
                 buttonRefs.current[index] = el;
               }}
               onClick={() => handleSlideChange(index)}
-              className={`w-10 h-10 sm:w-12 sm:h-12 rounded- border-2 border-white font-bold
+              className={`w-10 h-10 sm:w-12 sm:h-12 rounded- border-2 border-white font-light
                 transition-all duration-300 hover:scale-110
                 ${
                   index === activeIndex 
