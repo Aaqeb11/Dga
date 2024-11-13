@@ -39,26 +39,26 @@ const Glimpses = () => {
                 <span className="md:text-5xl text-3xl text-[#f2d98c]">ses</span>
             </div>
             
-            <div className="w-full mt-10 md:mt-14">
+            <div className="w-full mt-10 md:mt-14 ">
                 <div className="w-full flex md:flex-row flex-col">
                     <ImageWithHover
                         src="/intro_pic_1.jpg"
                         alt="pic1"
-                        className="md:w-[50%] w-[100%]  max-h-[40vh]  md:max-h-full"
+                        className="md:w-[50%] w-[100%]  max-h-[40vh]  "
                         title="Modern Living"
                         description="Contemporary design meets functionality"
                     />
                     <ImageWithHover
                         src="/intro_pic_2.jpg"
                         alt="pic1"
-                        className="md:w-[25%] w-[100%]"
+                        className="md:w-[25%] w-[100%] max-h-[40vh]"
                         title="Interior Design"
                         description="Elegant spaces crafted with care"
                     />
                     <ImageWithHover
                         src="/intro_pic_3.jpg"
                         alt="pic1"
-                        className="md:w-[25%] w-[100%]  max-h-[40vh] md:max-h-full"
+                        className="md:w-[25%] w-[100%]  max-h-[40vh] "
                         title="Luxury Homes"
                         description="Where comfort meets style"
                     />
@@ -67,21 +67,21 @@ const Glimpses = () => {
                     <ImageWithHover
                         src="/intro_pic_1.jpg"
                         alt="pic1"
-                        className="md:w-[25%] w-[100%]  max-h-[40vh] md:max-h-full"
+                        className="md:w-[25%] w-[100%]  max-h-[40vh] "
                         title="Urban Living"
                         description="City life reimagined"
                     />
                     <ImageWithHover
                         src="/intro_pic_2.jpg"
                         alt="pic1"
-                        className="md:w-[25%] w-[100%]  max-h-[40vh] md:max-h-full"
+                        className="md:w-[25%] w-[100%]  max-h-[40vh] "
                         title="Outdoor Spaces"
                         description="Natural beauty enhanced"
                     />
                     <ImageWithHover
                         src="/intro_pic_3.jpg"
                         alt="pic1"
-                        className="md:w-[50%] w-[100%]  max-h-[40vh] md:max-h-full"
+                        className="md:w-[50%] w-[100%]  max-h-[40vh] "
                         title="Dream Homes"
                         description="Making visions reality"
                     />

@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Expandable from "@/components/Expandable";
 import WhyUsSection from "@/components/WhyUsSection";
 import Glimplses from "@/components/Glimplses";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   const BackgroundLetter = ({ letter }: { letter: string }) => {
@@ -61,9 +62,20 @@ export default function Home() {
           <BackgroundLetter key={index} letter={letter} />
         ))}
         </div>
-        <div className="relative flex items-center justify-center  mx-auto z-20 flex-col gap-6 h-full ">
+        <div className="relative flex items-center justify-center  mx-auto z-20 flex-col gap-6  h-full">
       
           <Glimplses/>
+        </div>
+      </section>
+      <section className="relative min-h-screen mt-[13vh] ">
+      <div className="z-0 flex items-center justify-center relative">
+        {['T', 'E', 'S', 'T', 'M','O', 'N' , 'I','A','L' , 'S'].map((letter, index) => (
+          <BackgroundLetter key={index} letter={letter} />
+        ))}
+        </div>
+        <div className="flex items-center justify-center">
+
+        <Testimonials/>
         </div>
       </section>
     </main>
