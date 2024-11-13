@@ -81,7 +81,7 @@ const NavBar: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 h-[70px] lg:h-[110px] md:shadow-md transition-all duration-300 ${
         isScrolled 
           ? 'bg-white shadow-lg' 
-          : 'bg-[#4d4d4d]'
+          : 'bg-white'
       }`}
     >
       <div className="px-2 md:px-4 lg:px-6 h-full flex items-center justify-between lg:justify-start">
@@ -127,7 +127,7 @@ const NavBar: React.FC = () => {
                       : 'text-gray-800 hover:text-[#69bf06]'
                     : index === 0 
                       ? 'text-[#69bf06]' 
-                      : 'text-white hover:text-[#69bf06]'
+                      : 'text-gray-800 hover:text-[#69bf06]'
                 }`}
                 onClick={() => scrollToSection(item.id.toLowerCase())}
               >
@@ -149,7 +149,7 @@ const NavBar: React.FC = () => {
             }`}
             onClick={() => scrollToSection("contact")}
           >
-            Book Call
+            Book a Call
           </button>
         </div>
 
@@ -204,7 +204,7 @@ const NavBar: React.FC = () => {
               className="w-full bg-[#69bf06] border border-gray-300 py-3 rounded-xl text-lg font-medium text-white font-bold hover:border-[#69bf06] hover:bg-white hover:text-[#69bf06] transition duration-300"
               onClick={() => toggleMenu("contact")}
             >
-              Contact
+              Book a Call
             </button>
           </div>
         </div>

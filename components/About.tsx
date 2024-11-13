@@ -7,7 +7,7 @@ const About = () => {
             <div className="flex flex-col justify-evenly p-4  gap-8 w-full "> 
                 <div className="flex flex-col">
                     <div className="h-20 w-full"></div>
-                    <div><span className="text-black text-5xl">Designing</span> <span className="text-5xl text-[#69bf06]">Dreams</span></div>
+                    <div><span className="text-black text-5xl">Designing</span> <span className="text-5xl text-black">Dreams</span></div>
                 </div>
 
                 <div>
@@ -27,22 +27,13 @@ outcomes.
 
             <div className="w-full h-full relative">
                 <Image
-                    src="/HI1.png"
+                    src="/harsh.png"
                     alt="welcome image"
                     width={1200}    // Increased width
                     height={800}    // Increased height
                     quality={100}
-                    className="md:w-[40vw] 2xl:w-[25vw] md:-top-[210px] 2xl:-top-[200px] absolute z-10 w-[80vw] left-4 md:left-0 left-10"
+                    className="h-[30vw]  md:w-[40vw] 2xl:w-[25vw] md:-top-[210px] 2xl:-top-[200px] absolute z-10 w-[80vw] left-4 md:left-0 left-10"
                     priority        // Add priority loading for important images
-                />
-                
-                <Image
-                    src="/HI2.png"
-                    alt="welcome image"
-                    width={800}     // Increased width
-                    height={600}    // Increased height
-                    quality={100}
-                    className="md:w-[27vw] 2xl:w-[18vw] md:top-[40px] 2xl:top-[90px] md:-left-14 absolute z-0 w-[60vw] top-[150px] left-1"
                 />
             </div>
         </>

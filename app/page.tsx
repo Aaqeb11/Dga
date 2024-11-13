@@ -10,7 +10,7 @@ export default function Home() {
   const BackgroundLetter = ({ letter }: { letter: string }) => {
     return (
       
-    <span className="md:text-6xl text-6xl lg:text-[225px] 2xl:text-[350px] lg:w-[224px] 2xl:w-[300px] w-16 text-gray-100 flex justify-center font-bold">
+    <span className="md:text-6xl text-6xl lg:text-[225px] 2xl:text-[350px] lg:w-[224px] 2xl:w-[300px] w-16 text-[rgba(105,191,6,0.3)] flex justify-center font-bold">
     {letter}
   </span>
     )
@@ -28,21 +28,14 @@ export default function Home() {
       <section className="min-h-screen md:min-h-[50vh] lg:min-h-[100vh] 2xl:min-h-[80vh] relative mt-[13vh] mb-8 ">
       <div className="z-0 flex items-center justify-center relative">
         {['A', 'B', 'O', 'U', 'T'].map((letter, index) => (
-          <BackgroundLetter key={index} letter={letter} />
+          <BackgroundLetter  key={index} letter={letter} />
         ))}
       </div>
         <div className="relative flex items-center justify-center lg:max-w-[80%] 2xl:max-w-[60%] mx-auto z-20 md:-mt-[14vh] 2xl:-mt-[10vh]  -mt-20 md:flex-row flex-col gap-6 h-full">
           <About/>
         </div>
 
-      </section>
-      <div className=" items-center justify-center w-full px-10 absolute -mt-[90px] hidden md:flex z-10" >
-        <div className="h-[19vh] xl:h-[14vh] w-[1px] bg-[#69bf06]"></div>
-      </div>
-      <section className="min-h-screen relative mt-[40vh] md:mt-0">
-      <div className="flex lg:flex-row h-screen flex-col ">
-       <Expandable/>
-      </div>
+      
     </section>
     <section className=" relative md:mt-[13vh] mt-[30vh]">
     <div className="z-0 flex items-center justify-center relative">
