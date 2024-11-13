@@ -1,17 +1,12 @@
 import NavBar from "@/components/Navbar";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Oswald } from "next/font/google";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const oswald = Oswald({
+  weight: ["200", "400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-oswald",
 });
 
 export const metadata: Metadata = {
@@ -25,11 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className="font-mono antialiased"
-      >
-        <NavBar/>
+    <html lang="en" className={oswald.variable}>
+      <body className="font-sans antialiased">
+        <NavBar />
         {children}
       </body>
     </html>

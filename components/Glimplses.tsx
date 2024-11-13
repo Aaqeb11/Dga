@@ -20,7 +20,7 @@ const ImageWithHover = ({ src, alt, className, title, description }:{src:any,alt
         
         {/* Animated Line */}
         <div className="w-full h-[1px] relative mb-4">
-          <div className="absolute left-[50%] right-[50%] h-full bg-[#f2d98c] group-hover:left-[20%] group-hover:right-[20%] transition-all duration-500 ease-in-out"></div>
+          <div className="absolute left-[50%] right-[50%] h-full bg-[#69bf06] group-hover:left-[20%] group-hover:right-[20%] transition-all duration-500 ease-in-out"></div>
         </div>
         
         <p className="text-white text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -36,7 +36,7 @@ const Glimpses = () => {
         <div className="flex flex-col items-center justify-center w-full ">
               <div className="h-10 flex items-center relative z-10 md:-mt-24 -mt-4">
                 <span className='text-black md:text-5xl text-3xl'>Glimp</span>
-                <span className="md:text-5xl text-3xl text-[#f2d98c]">ses</span>
+                <span className="md:text-5xl text-3xl text-[#69bf06]">ses</span>
             </div>
             
             <div className="w-full mt-10 md:mt-14 ">

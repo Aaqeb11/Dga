@@ -7,15 +7,16 @@ const About = () => {
             <div className="flex flex-col justify-evenly p-4  gap-8 w-full "> 
                 <div className="flex flex-col">
                     <div className="h-20 w-full"></div>
-                    <div><span className="text-black text-5xl">Designing</span> <span className="text-5xl text-[#f2d98c]">Dreams</span></div>
+                    <div><span className="text-black text-5xl">Designing</span> <span className="text-5xl text-black">Dreams</span></div>
                 </div>
 
                 <div>
                     <p className="md:text-md">
-                        Dipen Gada & Associates, popularly known as DGA, began as a very modest interior design firm. 
-                        Gradually with time and every project accomplished, DGA evolved from an exclusive interior 
-                        design firm to a civil and architectural planning firm and attained the position as one of 
-                        the respectable and admired firms of India.
+                    At HARSH INTERIOR, we specialize in delivering comprehensive, turn-key contract solutions
+that streamline the project lifecycle from concept to completion. With a focus on quality,
+efficiency, and reliability, we provide our clients with end-to-end project management and
+execution, ensuring every detail is meticulously handled to achieve seamless, timely, and costeffective
+outcomes.
                     </p>
                 </div>
 
@@ -26,22 +27,13 @@ const About = () => {
 
             <div className="w-full h-full relative">
                 <Image
-                    src="/welcome_img1.png"
+                    src="/harsh.png"
                     alt="welcome image"
                     width={1200}    // Increased width
                     height={800}    // Increased height
                     quality={100}
-                    className="md:w-[40vw] 2xl:w-[25vw] md:-top-[210px] 2xl:-top-[200px] absolute z-10 w-[90vw] left-4 md:left-0"
+                    className="h-[30vw]  md:w-[40vw] 2xl:w-[25vw] md:-top-[210px] 2xl:-top-[200px] absolute z-10 w-[80vw] left-4 md:left-0 left-10"
                     priority        // Add priority loading for important images
-                />
-                
-                <Image
-                    src="/welcome_img2.png"
-                    alt="welcome image"
-                    width={800}     // Increased width
-                    height={600}    // Increased height
-                    quality={100}
-                    className="md:w-[27vw] 2xl:w-[18vw] md:top-[40px] 2xl:top-[90px] md:-left-14 absolute z-0 w-[70vw] top-[150px] -left-6"
                 />
             </div>
         </>
