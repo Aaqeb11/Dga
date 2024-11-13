@@ -13,6 +13,8 @@
       transform: rotate(2deg);
     }
   }
+
+
   
   .animate-wiggle {
     animation: wiggle 2s ease-in-out infinite;
