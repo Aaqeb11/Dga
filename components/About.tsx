@@ -32,7 +32,7 @@ outcomes.
                     width={1200}    // Increased width
                     height={800}    // Increased height
                     quality={100}
-                    className="h-[30vw]  md:w-[40vw] 2xl:w-[25vw] md:-top-[210px] 2xl:-top-[200px] absolute z-10 w-[80vw] left-4 md:left-0 "
+                    className="h-[60vw] md:h-[30vw]  md:w-[40vw] 2xl:w-[25vw] md:-top-[210px] 2xl:-top-[200px] absolute z-10 w-[80vw] left-4 md:left-0 "
                     priority        // Add priority loading for important images
                 />
             </div>
