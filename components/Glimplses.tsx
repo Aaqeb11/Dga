@@ -36,7 +36,7 @@ const Glimpses = () => {
         <div className="flex flex-col items-center justify-center w-full ">
               <div className="h-10 flex items-center relative z-10 md:-mt-24 -mt-4">
                 <span className='text-black md:text-5xl text-3xl'>Glimp</span>
-                <span className="md:text-5xl text-3xl text-[#69bf06]">ses</span>
+                <span className="md:text-5xl text-3xl text-black">ses</span>
             </div>
             
             <div className="w-full mt-10 md:mt-14 ">

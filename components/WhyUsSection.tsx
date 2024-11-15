@@ -4,7 +4,7 @@ const WhyUsSection: React.FC = () => {
   return (
     <section className="py-16 text-center relative">
       <div className="mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-4">
+        <h2 className="text-5xl font-medium mb-4">
           Why <span className="text-green">Us</span>
         </h2>
         <p className="text-lg text-gray-600 mb-12">

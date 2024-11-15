@@ -33,7 +33,7 @@ const NavBar: React.FC = () => {
 
   useEffect(() => {
     gsap.to(navbarRef.current, {
-      height: isScrolled ? "70px" : "100vh",
+      height: isScrolled ? "12vh" : "100vh",
       duration: 0.6,
       ease: "power2.inOut",
     });
@@ -88,7 +88,7 @@ const NavBar: React.FC = () => {
     <nav
       ref={navbarRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-lg h-[70px] " : "bg-white h-[100vh]"
+        isScrolled ? "bg-white shadow-lg h-[12vh]" : "bg-white h-[100vh]"
       }`}
     >
       <div className="px-4 md:px-6 h-full flex items-center justify-between lg:justify-start">
@@ -104,14 +104,18 @@ const NavBar: React.FC = () => {
         </div>
 
         {/* Logo */}
-        <div className="flex-none lg:w-[190px] lg:border-r-[0.5px] h-full items-center justify-center flex">
+        <div
+          className={`flex-none lg:w-[190px] lg:border-r-[0.5px] h-full items-center justify-center flex transition-all duration-300 ${
+            isScrolled ? "" : "transform scale-125"
+          }`}
+        >
           <Link href="/" passHref>
             <div className="inline-block">
               <Image
                 src={logo}
                 alt="logo"
-                width={50}
-                height={50}
+                width={isScrolled ? 50 : 80} // Adjust size based on scroll
+                height={isScrolled ? 50 : 80} // Adjust size based on scroll
                 className="object-cover hover:cursor-pointer"
                 priority
               />
@@ -128,8 +132,8 @@ const NavBar: React.FC = () => {
                 className={`text-sm font-medium nav-font transition-colors tracking-wider ${
                   isScrolled
                     ? index === 0
-                      ? "text-5xl text-[#69bf06]"
-                      : "text-5xl text-gray-800 hover:text-[#69bf06]"
+                      ? "text-[#69bf06]"
+                      : "text-gray-800 hover:text-[#69bf06]"
                     : index === 0
                     ? "text-[#69bf06]"
                     : "text-gray-800 hover:text-[#69bf06]"
