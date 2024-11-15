@@ -33,7 +33,7 @@ const NavBar: React.FC = () => {
 
   useEffect(() => {
     gsap.to(navbarRef.current, {
-      height: isScrolled ? "0vh" : "100vh",
+      height: isScrolled ? "10vh" : "100vh",
       duration: 0.6,
       ease: "power2.inOut",
     });
