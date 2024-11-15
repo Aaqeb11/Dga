@@ -16,7 +16,7 @@ const NavBar: React.FC = () => {
 
   const items = [
     { item: "HOME", id: "home" },
-    { item: "ABOUT US", id: "companies" },
+    { item: "PORTFOLIO", id: "companies" },
     { item: "CONTACT", id: "contact" },
   ];
 
