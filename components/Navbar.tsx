@@ -33,7 +33,7 @@ const NavBar: React.FC = () => {
 
   useEffect(() => {
     gsap.to(navbarRef.current, {
-      height: isScrolled ? "12vh" : "100vh",
+      height: isScrolled ? "0vh" : "100vh",
       duration: 0.6,
       ease: "power2.inOut",
     });
@@ -88,7 +88,7 @@ const NavBar: React.FC = () => {
     <nav
       ref={navbarRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-lg h-[12vh]" : "bg-white h-[100vh]"
+        isScrolled ? "bg-white shadow-lg h-[10vh]" : "bg-white h-[100vh]"
       }`}
     >
       <div className="px-4 md:px-6 h-full flex items-center justify-between lg:justify-start">
