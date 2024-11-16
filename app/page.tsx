@@ -11,13 +11,13 @@ export default function Home() {
   const BackgroundLetter = ({ letter }: { letter: string }) => {
     return (
       
-    <span className="md:text-6xl text-6xl lg:text-[225px] 2xl:text-[350px] lg:w-[224px] 2xl:w-[300px] w-16 text-[rgba(105,191,6,0.3)] flex justify-center font-bold">
+    <span className="md:text-6xl text-5xl lg:text-[225px] 2xl:text-[350px] lg:w-[224px] 2xl:w-[300px] w-16 text-[rgba(105,191,6,0.3)] flex justify-center font-bold">
     {letter}
   </span>
     )
   }
   return (
-    <main className="lg:mt-[110px] mt-[70px] relative">
+    <main className="lg:mt-[110px] mt-[70px] relative overflow-hidden">
       <section className="relative w-full lg:h-[80vh] h-[77vh]">
         <HeroSlide data={data} />
       </section>
@@ -60,8 +60,8 @@ export default function Home() {
           <Glimplses/>
         </div>
       </section>
-      <section className="relative min-h-screen mt-[13vh] ">
-      <div className="z-0 flex items-center justify-center relative">
+      <section className="relative mt-[13vh] min-h-[80vh] ">
+      <div className="z-0 flex items-center justify-center relative ">
         {['T', 'E', 'S', 'T', 'M','O', 'N' , 'I','A','L' , 'S'].map((letter, index) => (
           <BackgroundLetter key={index} letter={letter} />
         ))}

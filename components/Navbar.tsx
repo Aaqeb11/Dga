@@ -11,8 +11,10 @@ const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBodyLocked, setIsBodyLocked] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hasScrolledOnce, setHasScrolledOnce] = useState(false);
   const navbarRef = useRef<HTMLDivElement>(null);
   const menuItemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const initialScrollPosition = useRef(0);
 
   const items = [
     { item: "HOME", id: "home" },
@@ -20,31 +22,122 @@ const NavBar: React.FC = () => {
     { item: "CONTACT", id: "contact" },
   ];
 
-  useEffect(() => {
-    // GSAP animation for navbar height on scroll
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-    
-    window.addEventListener("scroll", handleScroll);
-    
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const lockScroll = () => {
+    if (typeof window !== 'undefined') {
+      initialScrollPosition.current = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${initialScrollPosition.current}px`;
+      document.body.style.width = '100%';
+    }
+  };
+
+  const unlockScroll = () => {
+    if (typeof window !== 'undefined') {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, initialScrollPosition.current);
+    }
+  };
 
   useEffect(() => {
-    gsap.to(navbarRef.current, {
-      height: isScrolled ? "10vh" : "100vh",
-      duration: 0.6,
-      ease: "power2.inOut",
-    });
+    let startY = 0;
+    let lastScrollY = 0;
+    const scrollThreshold = window.innerWidth <= 768 ? 1 : 0; // Lower threshold for mobile
+
+    const handleTouchStart = (e: TouchEvent) => {
+      startY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!hasScrolledOnce) {
+        const currentY = e.touches[0].clientY;
+        const deltaY = startY - currentY;
+
+        if (deltaY > scrollThreshold) {
+          setIsScrolled(true);
+          setHasScrolledOnce(true);
+          lockScroll();
+        }
+      }
+    };
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (!hasScrolledOnce && currentScrollY > scrollThreshold) {
+        setIsScrolled(true);
+        setHasScrolledOnce(true);
+        lockScroll();
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchmove', handleTouchMove);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, [hasScrolledOnce]);
+
+  useEffect(() => {
+    if (isScrolled) {
+      gsap.to(navbarRef.current, {
+        height: window.innerWidth <= 768 ? "10vh" : "10vh", // Smaller height for mobile
+        duration: 0.2,
+        ease: "power2.inOut",
+        onComplete: () => {
+          setTimeout(() => {
+            unlockScroll();
+          }, 100);
+        }
+      });
+    }
   }, [isScrolled]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      gsap.to(menuItemsRef.current, {
+        xPercent: 200,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.inOut",
+      });
+    } else {
+      gsap.to(menuItemsRef.current, {
+        xPercent: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.inOut",
+      });
+    }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (isBodyLocked) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
+
+    return () => {
+      unlockScroll();
+    };
+  }, [isBodyLocked]);
 
   const toggleMenu = (targetSectionId?: string) => {
     setIsMenuOpen((prev) => !prev);
     setIsBodyLocked((prev) => !prev);
 
     if (targetSectionId) {
-      scrollToSection(targetSectionId);
+      setTimeout(() => {
+        scrollToSection(targetSectionId);
+      }, 300);
     }
   };
 
@@ -55,40 +148,13 @@ const NavBar: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      gsap.fromTo(
-        menuItemsRef.current,
-        { xPercent: -200 },
-        {
-          xPercent: 0,
-          duration: 0.6,
-          stagger: 0.15,
-          ease: "power2.out",
-        }
-      );
-    } else {
-      gsap.to(menuItemsRef.current, {
-        xPercent: -200,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power2.in",
-      });
-    }
-  }, [isMenuOpen]);
-
-  useEffect(() => {
-    document.body.style.overflow = isBodyLocked ? "hidden" : "unset";
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isBodyLocked]);
-
   return (
     <nav
       ref={navbarRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-lg h-[10vh]" : "bg-white h-[100vh]"
+        isScrolled 
+          ? "bg-white shadow-lg md:h-[10vh] h-[10vh]" 
+          : "bg-white md:h-[100vh] h-[100vh]"
       }`}
     >
       <div className="px-4 md:px-6 h-full flex items-center justify-between lg:justify-start">
@@ -114,8 +180,8 @@ const NavBar: React.FC = () => {
               <Image
                 src={logo}
                 alt="logo"
-                width={isScrolled ? 50 : 80} // Adjust size based on scroll
-                height={isScrolled ? 50 : 80} // Adjust size based on scroll
+                width={isScrolled ? 50 : 80}
+                height={isScrolled ? 50 : 80}
                 className="object-cover hover:cursor-pointer"
                 priority
               />
@@ -221,3 +287,4 @@ const NavBar: React.FC = () => {
 };
 
 export default NavBar;
+
