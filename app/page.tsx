@@ -6,6 +6,7 @@ import Expandable from "@/components/Expandable";
 import WhyUsSection from "@/components/WhyUsSection";
 import Glimplses from "@/components/Glimplses";
 import Testimonials from "@/components/Testimonials";
+import NewComponent from "@/components/NewComponent";
 
 export default function Home() {
   const BackgroundLetter = ({ letter }: { letter: string }) => {
@@ -69,6 +70,9 @@ export default function Home() {
         <div className="flex items-center justify-center">
 
         <Testimonials/>
+        </div>
+        <div className="flex items-center justify-center">
+          <NewComponent/>
         </div>
       </section>
     </main>
