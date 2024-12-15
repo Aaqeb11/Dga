@@ -7,6 +7,7 @@ import WhyUsSection from "@/components/WhyUsSection";
 import Glimplses from "@/components/Glimplses";
 import Testimonials from "@/components/Testimonials";
 import NewComponent from "@/components/NewComponent";
+import NewSlider from "@/components/NewSlider";
 
 export default function Home() {
   const BackgroundLetter = ({ letter }: { letter: string }) => {
@@ -19,61 +20,8 @@ export default function Home() {
   }
   return (
     <main className="lg:mt-[110px] mt-[70px] relative overflow-hidden">
-      <section className="relative w-full lg:h-[80vh] h-[77vh]">
-        <HeroSlide data={data} />
-      </section>
-
-      {/* Positioning the line with negative margin to overlay */}
-      <div className=" items-center justify-center w-full px-10 absolute -mt-14 hidden md:flex">
-        <div className="h-[19vh] xl:h-[14vh] w-[1px] bg-[#69bf06]"></div>
-      </div>
-      <section className="min-h-screen md:min-h-[50vh] lg:min-h-[100vh] 2xl:min-h-[80vh] relative mt-[13vh] mb-8 ">
-      <div className="z-0 flex items-center justify-center relative">
-        {['A', 'B', 'O', 'U', 'T'].map((letter, index) => (
-          <BackgroundLetter  key={index} letter={letter} />
-        ))}
-      </div>
-        <div className="relative flex items-center justify-center lg:max-w-[80%] 2xl:max-w-[60%] mx-auto z-20 md:-mt-[14vh] 2xl:-mt-[10vh]  -mt-20 md:flex-row flex-col gap-6 h-full">
-          <About/>
-        </div>
-
-      
-    </section>
-    <section className=" relative md:mt-[13vh] mt-[30vh]">
-    <div className="z-0 flex items-center justify-center relative">
-        {['W', 'H', 'Y', 'U', 'S'].map((letter, index) => (
-          <BackgroundLetter key={index} letter={letter} />
-        ))}
-      </div>
-        <div className="relative flex items-center justify-between lg:max-w-[80%] 2xl:max-w-[60%] mx-auto z-20 md:-mt-[90px] lg:-mt-[200px] 2xl:-mt-[220px] -mt-20 md:flex-row flex-col gap-6 h-full">
-          <WhyUsSection/>
-        </div>
-
-      </section>
-      <section className="relative min-h-screen md:mt-[13vh] ">
-      <div className="z-0 flex items-center justify-center relative">
-        {['G', 'L', 'I', 'M', 'P', 'S' , 'E' , 'S'].map((letter, index) => (
-          <BackgroundLetter key={index} letter={letter} />
-        ))}
-        </div>
-        <div className="relative flex items-center justify-center  mx-auto z-20 flex-col gap-6  h-full">
-      
-          <Glimplses/>
-        </div>
-      </section>
-      <section className="relative mt-[13vh] min-h-[80vh] ">
-      <div className="z-0 flex items-center justify-center relative ">
-        {['T', 'E', 'S', 'T', 'M','O', 'N' , 'I','A','L' , 'S'].map((letter, index) => (
-          <BackgroundLetter key={index} letter={letter} />
-        ))}
-        </div>
-        <div className="flex items-center justify-center">
-
-        <Testimonials/>
-        </div>
-        <div className="flex items-center justify-center">
-          <NewComponent/>
-        </div>
+      <section className="relative flex justify-center items-center w-full lg:h-[80vh] h-[77vh] ">
+        <NewSlider/>
       </section>
     </main>
   );
