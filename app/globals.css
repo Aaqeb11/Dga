@@ -15,6 +15,32 @@
   }
 
 
+  /* Custom Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #69bf06; /* Green color for navigation arrows */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #57a704; /* Darker green on hover */
+}
+
+/* Custom Pagination Bullets */
+.swiper-pagination-bullet {
+  background-color: #ffffff; /* Default gray color */
+  opacity: 1;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #69bf06; /* Active bullet green color */
+}
+
+
+
   
   .animate-wiggle {
     animation: wiggle 2s ease-in-out infinite;

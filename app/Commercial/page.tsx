@@ -13,7 +13,10 @@ export default function Home() {
   }
   return (
     <main className="lg:mt-[110px] mt-[70px] relative">
-      <section className="relative min-h-screen md:mt-[13vh] ">
+      <section className=" min-h-screen flex flex-col items-center md:mt-[30vh] ">
+        <h1 className="text-5xl font-medium justify-center items-center mb-[10vh]">Commercial <span className="text-green-600">Projects</span></h1>
+        <NewComponent/>
+        <NewComponent/>
         <NewComponent/>
       </section>
     </main>
