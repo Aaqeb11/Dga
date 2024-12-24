@@ -1,11 +1,6 @@
 import Image from "next/image";
-import { data } from "@/data/IntroSection";
-import HeroSlide from "@/components/HeroSlide";
-import About from "@/components/About";
-import WhyUsSection from "@/components/WhyUsSection";
-import Glimplses from "@/components/Glimplses";
-import Testimonials from "@/components/Testimonials";
-import LatestProjects from "@/components/LatestProjects";
+
+import NewComponent from "@/components/NewComponent";
 
 export default function Home() {
   const BackgroundLetter = ({ letter }: { letter: string }) => {
@@ -18,8 +13,11 @@ export default function Home() {
   }
   return (
     <main className="lg:mt-[110px] mt-[70px] relative">
-      <section className="relative min-h-screen md:mt-[13vh] ">
-        <LatestProjects/>
+      <section className=" min-h-screen flex flex-col items-center md:mt-[30vh] ">
+        <h1 className="text-5xl font-medium justify-center items-center mb-[10vh]">Commercial <span className="text-green-600">Projects</span></h1>
+        <NewComponent/>
+        <NewComponent/>
+        <NewComponent/>
       </section>
     </main>
   );

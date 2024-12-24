@@ -2,6 +2,7 @@ import { Oswald } from "next/font/google";
 import NavBar from "@/components/Navbar";
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 // Ensure metadata is server-side
 export const metadata: Metadata = {
@@ -22,9 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={oswald.variable}>
-      <body className="font-sans antialiased">
+      <body className="bg-white font-sans antialiased">
         <NavBar />
         {children}
+        <Footer/>
       </body>
     </html>
   );
